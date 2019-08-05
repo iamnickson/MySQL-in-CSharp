@@ -82,6 +82,12 @@ namespace DisplayTable
 
         private void button3_Click(object sender, EventArgs e)
         {
+            Form1 newForm = new Form1();
+            newForm.ShowDialog();
+
+
+            //this.Hide();
+            /*
             string productid = textBox1.Text;
             string Name = textBox2.Text;
             string p = textBox3.Text;
@@ -132,7 +138,9 @@ namespace DisplayTable
                     }
                     dataGridView1.DataSource = product;
                 }
-            }
+
+
+            }*/
         }
     }
 }
