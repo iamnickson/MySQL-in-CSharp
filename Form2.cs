@@ -87,13 +87,16 @@ namespace DisplayTable
                     product.Columns.Add("PID");
                     product.Columns.Add("PName");
                     product.Columns.Add("UPrice");
+                    product.Columns.Add("Discount");
                     while (mrdr.Read())
                     {
                         DataRow drow = product.NewRow();
                         double productPrice = Convert.ToDouble(mrdr["UnitPrice"]);
+                        double discount = productPrice * 0.9;
                         drow["PID"] = mrdr["ProductId"];
                         drow["PName"] = mrdr["ProductName"];
                         drow["UPrice"] = mrdr["UnitPrice"];
+                        drow["Discount"] = discount;
                         product.Rows.Add(drow);
                     }
                     dataGridView1.DataSource = product;
